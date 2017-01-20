@@ -308,3 +308,12 @@ class AccountDocumentRelated(models.Model):
             self.date = False
             self.fiscal_document_id = False
             self.inscr_est = False
+
+
+class BrAccountFiscalObservation(models.Model):
+    _name = 'br_account.fiscal.observation'
+    _description = u'Observação Fiscal'
+
+    name = fields.Text(u'Descrição')
+    document_id = fields.Many2one(
+        'br_account.fiscal.document', string="Documento Fiscal")
